@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach Worms Game</title>
+  <link rel="stylesheet" href="Games.css">
+</head>
+<body>
+  <div class="cover">
+    <h1 class="title">Beach Worms Game</h1>
+    <div class="buttons">
+      <button class="play-button" id="playButton">Play</button>
+      <button class="time-setting-button" id="timeSettingButton">Time Setting</button>
+      <button class="about-button" id="aboutButton">About</button>
+    </div>
+  </div>
+
+  <div id="modalContainer" class="modal-container">
+    <div id="timeSettingModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeTimeSettingModal()">&times;</span>
+        <p>Set Time Limit:</p>
+        <select id="timeLimit">
+          <option value="3">3 Minutes</option>
+          <option value="1">1 Minute</option>
+        </select>
+        <button onclick="setTimeLimit()">Set</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalContainer2" class="modal-container2">
+    <div id="aboutModal" class="modal2">
+      <div class="modal-content2">
+        <span class="close" onclick="closeAboutModal()">&times;</span>
+        <h2>About Beach Worms Game</h2>
+        <p>Instructions on how to play the game...</p>
+        <p>Key Controls</p>
+        <p>Key W - Up</p>
+        <p>Key A - Left Side</p>
+        <p>Key S - Down</p>
+        <p>Key D - Right Side</p>
+        <p>Space - Catch</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="gameOverModal" class="modal-container">
+    <div class="modal">
+      <div class="modal-content">
+        <h2>Game Over</h2>
+        <p>Your Score: <span id="finalScore"></span></p>
+        <button onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio for Game Over -->
+  <audio id="gameOverSound" src="Game Over.mp3"></audio>
+  <!-- Audio for Game Start -->
+  <audio id="gameStartSound" src="Start Game.mp3"></audio>
+  <!-- Audio for Catching Worm -->
+  <audio id="catchSound" src="Success Catch.mp3"></audio>
+  <!-- Audio for Fail Catch -->
+  <audio id="failSound" src="Fail Catch.mp3"></audio>
+
+  <div id="hud">
+    <span id="score" style="display: none;"></span>
+    <span id="timer" style="display: none;"></span>
+  </div>
+
+  <div id="gameArea" class="game-area" style="display: none;">
+    <canvas id="gameCanvas" width="1278" height="450"></canvas>
+  </div>
+
+  <script src="Games.js"></script>
+</body>
+</html>

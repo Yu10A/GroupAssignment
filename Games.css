@@ -1,0 +1,137 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+body.game-active {
+  background: url('background2.jpg');
+  background-size: cover;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4682B4; /* Steel Blue */
+}
+
+.play-button {
+  background-color: #32CD32; /* Lime Green */
+}
+
+.time-setting-button {
+  background-color: #FFD700; /* Gold */
+}
+
+.about-button {
+  background-color: #FF6347; /* Tomato */
+}
+
+.modal-container, .modal-container2 {
+  display: none; /* Hide by default */
+  position: fixed; /* Full width and height */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1; /* Make sure it appears on top */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+
+.modal, .modal2 {
+  background-color: #fefefe; /* White background */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.game-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: blue;
+  font-size: 2rem;
+}
+
+canvas {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to position the canvas on the sand area */
+  left: 20px; /* Adjust this value to position the canvas on the sand area */
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#hud {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: black;
+  font-size: 20px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+#score {
+  margin-right: 20px;
+}
+
+#time {
+  margin-right: 20px;
+}
